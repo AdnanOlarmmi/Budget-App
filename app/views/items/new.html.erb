@@ -1,0 +1,10 @@
+<%= form_with model: @item, url: group_items_path(@group) do |form| %>
+
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+    <%= form.label :group_id %>
+    <%= form.label :amount %>
+    <%= form.number_field :amount %>
+        <%= form.collection_select :group_id, Group.where(user: current_user), :id, :name %>
+    <%= form.submit %>
+<% end %>

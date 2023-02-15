@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
     before_action :set_item, only: [:show, :edit, :update, :destroy]
+    before_action :authenticate_user!
 
     def index
         @items = Item.all
@@ -10,6 +11,7 @@ class ItemsController < ApplicationController
 
     def new
         @item = Item.new
+        @group = Group.find(params[:group_id])
     end
 
     def edit
@@ -17,15 +19,18 @@ class ItemsController < ApplicationController
 
     def create
         @item = Item.new(item_params)
-
+        @item.user = current_user
+        @group = Group.find(params[:group_id])
         respond_to do |format|
             if @item.save
-                format.html { redirect_to @item, notice: "Item was successfully created." }
+                format.html { redirect_to group_path(@group), notice: "Item was successfully created." }
                 format.json { render :show, status: :created, location: @item }
             else
                 format.html { render :new }
                 format.json { render json: @item.errors, status: :unprocessable_entity }
             end
+        end
+    end
 
             def update
                 respond_to do |format|
@@ -54,6 +59,8 @@ class ItemsController < ApplicationController
             end
 
             def item_params
-                params.require(:item).permit(:name, :amount, :user_id, :group_id)
+                params.require(:item).permit(:name, :amount, :group_id, :user_id)
             end
-        end
+    
+end
+

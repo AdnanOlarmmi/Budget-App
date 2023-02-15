@@ -1,0 +1,9 @@
+<% @items.each do |item| %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= item.amount %></td>
+    </tr>
+    <% end %>
+
+  <%= link_to "New Item", new_group_item_path(@group) %>
+  
