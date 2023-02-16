@@ -1,15 +1,17 @@
 class GroupsController < ApplicationController
     before_action :set_group, only: [:show, :edit, :update, :destroy]
-    #before_action :authenticate_user!
+    before_action :authenticate_user!
 
     def index
-        @groups = current_user.groups
+        @user = current_user
+        @groups = Group.where(user: current_user)
+        @amount = Item.where(group: @group).sum(:amount)
     end
 
     def show
-        @items = @group.items
-        @item = Item.new
-        @group = Group.find(params[:id])
+        @user = current_user
+        @items = Item.where(group: @group)
+
     end
 
     def new
@@ -25,13 +27,14 @@ class GroupsController < ApplicationController
 
         respond_to do |format|
             if @group.save
-                format.html { redirect_to @group, notice: "Group was successfully created." }
+                format.html { redirect_to groups_path, notice: "Group was successfully created." }
                 format.json { render :show, status: :created, location: @group }
             else
                 format.html { render :new }
                 format.json { render json: @group.errors, status: :unprocessable_entity }
             end
         end
+        
     end
 
     def update
