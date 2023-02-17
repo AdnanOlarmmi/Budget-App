@@ -1,4 +1,11 @@
-<h1>Welcome to budget tracker app</h1>
+<div class="px-4 py-5 my-5 text-center">
+    <h1 class="display-5 fw-bold">Welcome to budget tracker app</h1>
+    <div class="col-lg-6 mx-auto">
+      <p class="lead mb-4">Budget Tracker App is a software application that you can access from your computer, tablet or mobile device to track your finances, such as income, savings, debt payoff, or investing. Budget apps can help sync with your financial accounts to give you an overview in real-time when finances change.</p>
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+      <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary btn-lg px-4 gap-3" %>
 
-<%= link_to "Sign up", new_user_registration_path %>
-<%= link_to "Log in", new_user_session_path %>
+      <%= link_to "Log in", new_user_session_path, class: "btn btn-primary btn-lg px-4 gap-3" %>
+      </div>
+    </div>
+  </div>
