@@ -61,7 +61,7 @@ To setup the project follow the steps:
 
 1. Clone this project using Git Bash: 
     ``` 
-    git clone https://github.com/ouasamine/budget-app 
+    git clone https://github.com/adnanolarmmi/budget-app 
     ```
   
 2. Inside the project directory, install the project's dependencies
