@@ -4,14 +4,8 @@
   <%= render "shared/nav" %>
 </header>
 <div class="my-3 p-3 bg-body rounded shadow-sm">
-    <% if user_signed_in? %> 
     <h2 class="border-bottom pb-2 mb-0 mt-4 text-center">Categories</h2>
-    <% @groups.each do |group| %>
-      
-       
-            
-              
-               
+    <% @groups.each do |group| %>          
                 <p class="pb-3 mb-0 mt-3 lh-sm border-bottom d-flex">   <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="62" height="62" src="<%= group.icon %>"/>
                 <strong class="text-gray-dark mr-5">
                 <%= link_to group.name , group_path(group), class: "nav-link text-capitalize" %>
@@ -20,12 +14,6 @@
                 <%= Item.where(group: group).sum(:amount) %>
                 </span>
                 </p>
-                
-                
-                
-          
-          
-    
     <% end %>
     </div>
 
@@ -38,10 +26,6 @@
       </div>
     </footer>
 
-    
-    <% else %>
-        <%= render "home/index" %>
-    <% end %>
 </body>
 
 
