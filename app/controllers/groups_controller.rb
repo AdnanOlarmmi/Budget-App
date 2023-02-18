@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
     @user = current_user
     @items = Item.where(group: @group)
     @group = Group.find(params[:id])
+    @amount = Item.where(group: @group).sum(:amount)
   end
 
   def new

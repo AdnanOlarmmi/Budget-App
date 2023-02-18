@@ -1,6 +1,6 @@
 <%= render "shared/nav" %>
 <div class="my-5 p-3 bg-body rounded shadow-sm">
-<h2 class="border-bottom pb-2 mb-0 mt-4 text-center">Items for <%=@group.name%></h2>
+<h2 class="border-bottom pb-2 mb-0 mt-4 text-center">Items for <%=@group.name%> is <%= @amount %> in total</h2>
 <% if @items.empty? %>
   <p class="pb-3 mb-0 mt-3 lh-sm border-bottom d-flex"> 
   <strong class="text-gray-dark mr-5">
