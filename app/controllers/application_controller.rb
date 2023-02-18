@@ -13,4 +13,8 @@ class ApplicationController < ActionController::Base
         u.permit(:name, :email, :password, :current_password)
       end
     end
+
+    def authenticate_user!
+      redirect_to home_index_path, notice: 'Your custom message here' unless user_signed_in?
+  end
 end

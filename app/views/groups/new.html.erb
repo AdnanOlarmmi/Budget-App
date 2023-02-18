@@ -1,9 +1,15 @@
+<%= render "shared/nav" %>
+
 <%= form_with model: @group do |form| %>
+    <div class="my-3 form-group">
+    <br><br>
     <%= form.label :name %>
-    <%= form.text_field :name %>
-    <%= form.label :icon %>
-    <%= form.text_field :icon %>
+    <%= form.text_field :name, class: "form-control" %>
+    <%= form.label :iconUrl %>
+    <%= form.text_field :icon, class: "form-control" %>
     <%= form.submit %>
+    </div>
 
 
 <% end %>
+

@@ -1,9 +1,36 @@
-<% @items.each do |item| %>
-    <tr>
-      <td><%= item.name %></td>
-      <td><%= item.amount %></td>
-    </tr>
-    <% end %>
+<%= render "shared/nav" %>
+<div class="my-5 p-3 bg-body rounded shadow-sm">
+<h2 class="border-bottom pb-2 mb-0 mt-4 text-center">Items for <%=@group.name%></h2>
+<% if @items.empty? %>
+  <p class="pb-3 mb-0 mt-3 lh-sm border-bottom d-flex"> 
+  <strong class="text-gray-dark mr-5">
+  No items yet
+  </strong>
+  </p>
+  <% else %>
+  <% @items.each do |item| %>
+  
+    <p class="pb-3 mb-0 mt-3 lh-sm border-bottom d-flex"> 
+    <strong class="text-gray-dark mr-5 text-capitalize">
+   <%= item.name %>
+     </strong>
+    <span class="ml-50">&nbsp &nbsp&nbsp &nbsp
+    <%= item.amount %>
+    </span>
+    </p>
+  <% end %>
+<% end %>
 
-  <%= link_to "New Item", new_group_item_path(@group) %>
+
+</div>
+
+<footer class="footer mt-auto py-3 bg-light">
+<div class="container text-center">
+<span class="text-muted text-center">
+<%= link_to "New Item", new_group_item_path(@group), class: "nav-link" %>
+</span>
+</div>
+</footer>
+
+
   

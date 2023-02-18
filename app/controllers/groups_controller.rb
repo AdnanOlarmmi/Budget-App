@@ -11,6 +11,7 @@ class GroupsController < ApplicationController
     def show
         @user = current_user
         @items = Item.where(group: @group)
+        @group = Group.find(params[:id])
 
     end
 
