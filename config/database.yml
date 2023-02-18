@@ -96,11 +96,7 @@ test:
 #
 production:
   <<: *default
-  adapter: postgresql
-  encoding: unicode
   database: budget_app_db
-  username: postgres
-  password: olamilekan
-  pool: 5
-  timeout: 5000
-
+  username: budget_app
+  password: <%= ENV["BUDGET_APP_DATABASE_PASSWORD"] %>
+  
