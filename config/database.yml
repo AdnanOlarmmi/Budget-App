@@ -96,7 +96,6 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV["BUDGET_APP_DATABASE_URL"] %>
   adapter: postgresql
   encoding: unicode
   database: budget_app_db
