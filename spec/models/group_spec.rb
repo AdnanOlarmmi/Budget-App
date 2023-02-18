@@ -13,7 +13,7 @@ RSpec.describe Group, type: :model do
 
   # Test instance methods
   context 'check validation' do
-    subject { Group.new(name: 'Games', icon: 'games.jpg', user: user) }
+    subject { Group.new(name: 'Games', icon: 'games.jpg', user:) }
 
     before { subject.save }
 

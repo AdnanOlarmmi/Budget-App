@@ -5,5 +5,4 @@ class Item < ApplicationRecord
   validates :name, presence: true
   validates :amount, presence: true
   validates :group, presence: true
-
 end
