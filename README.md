@@ -4,6 +4,8 @@
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
     - [Key Features](#key-features)
+    - [📹 Video Description](#video-description)
+    - [🚀 Live Demo](#live-demo)
 - [💻 Getting Started](#getting-started)
   - [Prerequisites](#prerequisites)
   - [Setup](#setup)
@@ -35,6 +37,12 @@
 
 - User registration system (using Devise gem)
 - User authorization system to manage permissions and access control (using CanCanCan gem)
+
+### Video Description
+- [Watch a video description given by me](https://www.loom.com/share/cf648f115dac4140971a0b3606553780)
+
+### Live Demo
+- Access the live version [here]()
 
 ## Getting Started 
 
