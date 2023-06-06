@@ -1,0 +1,33 @@
+<body class="d-flex flex-column h-100">
+    
+<header>
+  <%= render "shared/nav" %>
+</header>
+<div class="my-3 p-3 bg-body rounded shadow-sm">
+    <h2 class="border-bottom pb-2 mb-0 mt-4 text-center">Categories</h2>
+    <% @groups.each do |group| %>          
+                <p class="pb-3 mb-0 mt-5 lh-sm border-bottom d-flex">   <img class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="62" height="62" src="<%= group.icon %>"/>
+                <strong class="text-gray-dark mr-5">
+                <%= link_to group.name , group_path(group), class: "nav-link text-capitalize" %>
+                 </strong>
+                <span class="ml-50">&nbsp &nbsp&nbsp &nbsp
+                <%= Item.where(group: group).sum(:amount) %>
+                </span>
+                </p>
+    <% end %>
+    </div>
+
+    
+    <footer class="footer mt-auto py-3 bg-success">
+      <div class="container text-center">
+      <span class="text-muted text-center">
+      <%= link_to "NEW GROUP", new_group_path, class: "nav-link text-white border border-light px-3 py-3" %>
+      </span>
+      </div>
+    </footer>
+
+</body>
+
+
+
+
